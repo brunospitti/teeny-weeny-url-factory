@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import initialDBData from '../../../helpers/initialDBData.json';
-import { URLsModel } from './Models/URLsModel';
+const mongoose = require('mongoose');
+const initialDBData = require('../../../helpers/initialDBData.json');
+const { URLsModel } = require('./Models/URLsModel');
 
 const {
   DATABASE_USERNAME,

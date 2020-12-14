@@ -1,7 +1,7 @@
-import { Router } from 'express';
-import path from 'path';
-import { redirectMiddleware } from '../middleware/redirectMiddleware';
-import { ignoreFavicon } from '../middleware/ignoreFavicon';
+const { Router } = require('express');
+const path = require('path');
+const { redirectMiddleware } = require('../middleware/redirectMiddleware');
+const { ignoreFavicon } = require('../middleware/ignoreFavicon');
 
 console.log('appRouter');
 const appRouter = Router();

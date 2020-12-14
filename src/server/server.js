@@ -1,10 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import path from 'path';
-import cors from 'cors';
-import helmet from 'helmet';
-import { APIRouter } from './router/APIRouter';
-import { appRouter } from './router/appRouter';
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
+const { APIRouter } = require('./router/APIRouter');
+const { appRouter } = require('./router/appRouter');
 
 require('dotenv').config({ path: '../../.env' });
 require('./database/connect');

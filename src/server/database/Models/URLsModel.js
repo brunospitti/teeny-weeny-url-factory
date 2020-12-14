@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
-import { URLSchema } from '../Schemas/URLSchema';
+const mongoose = require('mongoose');
+const { URLSchema } = require('../Schemas/URLSchema');
 
-export const URLsModel = mongoose.model('urls', URLSchema);
+const URLsModel = mongoose.model('urls', URLSchema);
+module.exports = { URLsModel };

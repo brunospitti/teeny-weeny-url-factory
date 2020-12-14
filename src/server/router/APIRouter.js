@@ -1,7 +1,7 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
-import { URLShortenerMiddleware } from '../middleware/URLShortenerMiddleware';
-import { mostVisitedURLsMiddleware } from '../middleware/mostVisitedURLsMiddleware';
+const { URLShortenerMiddleware } = require('../middleware/URLShortenerMiddleware');
+const { mostVisitedURLsMiddleware } = require('../middleware/mostVisitedURLsMiddleware');
 
 const APIRouter = Router();
 

@@ -1,7 +1,7 @@
-import { nanoid } from 'nanoid';
-import { URLsModel } from '../database/Models/URLsModel';
+const { nanoid } = require('nanoid');
+const { URLsModel } = require('../database/Models/URLsModel');
 
-export const URLShortenerMiddleware = async (req, res, next) => {
+const URLShortenerMiddleware = async (req, res, next) => {
   const { body } = req;
 
   const URLNormalize = (URL) => {
@@ -35,3 +35,5 @@ export const URLShortenerMiddleware = async (req, res, next) => {
     });
   });
 };
+
+module.exports = { URLShortenerMiddleware };

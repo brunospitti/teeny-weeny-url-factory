@@ -2,8 +2,8 @@
   "name": "server-side",
   "version": "1.0.0",
   "scripts": {
-    "server": "nodemon --exec babel-node server.js",
-    "build": "npm install server.js && babel-node server.js"
+    "server": "nodemon server.js",
+    "build": "node server.js"
   },
   "dependencies": {
     "@babel/node": "^7.12.6",
