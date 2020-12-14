@@ -10,7 +10,8 @@ require('dotenv').config({ path: '../../.env' });
 require('./database/connect');
 
 const app = express();
-const port = 5555;
+app.set('port', process.env.APP_PORT || 5555);
+app.set('host', process.env.APP_HOST || 'localhost');
 
 app.use(helmet.hidePoweredBy());
 app.use(cors());
@@ -32,4 +33,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(app.get('port'), () =>
+  console.log(`Listening http://${app.get('host')}on port ${app.get('port')}`)
+);
