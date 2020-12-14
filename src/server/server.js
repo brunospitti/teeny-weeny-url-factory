@@ -6,8 +6,12 @@ const helmet = require('helmet');
 const { APIRouter } = require('./router/APIRouter');
 const { appRouter } = require('./router/appRouter');
 
-require('dotenv').config({ path: '../../.env' });
+require('dotenv').config();
 require('./database/connect');
+console.log(
+  '🚀 ~ file: server.js ~ line 27 ~ process.env.BASE_URL',
+  process.env.BASE_URL
+);
 
 const app = express();
 app.set('port', process.env.APP_PORT || 5555);
