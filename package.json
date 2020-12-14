@@ -7,9 +7,10 @@
     "clean": "rm dist/bundle.js",
     "dev": "concurrently --kill-others-on-fail \"yarn start-server\" \"yarn start-client\"",
     "build": "yarn build-client && yarn build-server",
+    "start": "cd src/server && yarn build",
     "start-client": "parcel watch src/client/index.html",
     "start-server": "cd src/server && yarn && yarn server",
-    "build-server": "cd src/server && yarn && yarn build",
+    "build-server": "cd src/server && yarn",
     "build-client": "parcel build src/client/index.html",
     "test": "jest"
   },
