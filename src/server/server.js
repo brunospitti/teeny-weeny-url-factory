@@ -14,7 +14,7 @@ console.log(
 );
 
 const app = express();
-app.set('port', process.env.APP_PORT || 5555);
+app.set('port', process.env.PORT || 5555);
 app.set('host', process.env.APP_HOST || 'localhost');
 
 app.use(helmet.hidePoweredBy());
