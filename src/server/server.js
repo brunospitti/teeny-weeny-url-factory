@@ -1,19 +1,16 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const cors = require('cors');
-const helmet = require('helmet');
-const { APIRouter } = require('./router/APIRouter');
-const { appRouter } = require('./router/appRouter');
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import cors from 'cors';
+import helmet from 'helmet';
+import { APIRouter } from './router/APIRouter';
+import { appRouter } from './router/appRouter';
 
 require('dotenv').config();
 require('./database/connect');
-console.log(
-  '🚀 ~ file: server.js ~ line 27 ~ process.env.BASE_URL',
-  process.env.BASE_URL
-);
 
 const app = express();
+
 app.set('port', process.env.PORT || 5555);
 app.set('host', process.env.APP_HOST || 'localhost');
 
@@ -38,5 +35,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(app.get('port'), () =>
-  console.log(`Listening http://${app.get('host')}on port ${app.get('port')}`)
+  console.log(`Listening to ${app.get('host')} on port ${app.get('port')}`)
 );

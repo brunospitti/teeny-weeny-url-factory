@@ -1,6 +1,6 @@
-const { URLsModel } = require('../database/Models/URLsModel');
+import { URLsModel } from '../database/Models/URLsModel';
 
-const mostVisitedURLsMiddleware = async (req, res, next) => {
+export const mostVisitedURLsMiddleware = async (req, res, next) => {
   URLsModel.find().exec(function (err, data) {
     if (err) return next(err);
 
@@ -21,5 +21,3 @@ const mostVisitedURLsMiddleware = async (req, res, next) => {
     res.status(200).send(parsedData);
   });
 };
-
-module.exports = { mostVisitedURLsMiddleware };

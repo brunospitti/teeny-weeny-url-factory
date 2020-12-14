@@ -1,6 +1,6 @@
-const { URLsModel } = require('../database/Models/URLsModel');
+import { URLsModel } from '../database/Models/URLsModel';
 
-const redirectMiddleware = async (req, res, next) => {
+export const redirectMiddleware = async (req, res, next) => {
   const { shortURLCode } = req.params;
   const { BASE_URL } = process.env;
 
@@ -17,5 +17,3 @@ const redirectMiddleware = async (req, res, next) => {
     }
   });
 };
-
-module.exports = { redirectMiddleware };
