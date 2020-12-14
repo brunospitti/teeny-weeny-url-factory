@@ -12,7 +12,7 @@ export const Form = () => {
 
   const [displayError, setDisplayError] = useState();
   const [isCopied, setIsCopied] = useState(false);
-  const [inputURL, setInputURL] = useState('google.co.uk');
+  const [inputURL, setInputURL] = useState();
   const [inputCode, setInputCode] = useState();
   const [generatedURL, setGeneratedURL] = useState();
   const [generatedCode, setGeneratedCode] = useState();
