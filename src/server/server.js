@@ -1,13 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import path from 'path';
 import cors from 'cors';
 import helmet from 'helmet';
 import { APIRouter } from './router/APIRouter';
 import { appRouter } from './router/appRouter';
 import { paths } from '../../config/paths';
 
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 require('./database/connect');
 
 const app = express();

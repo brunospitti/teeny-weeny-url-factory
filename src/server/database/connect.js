@@ -18,11 +18,6 @@ mongoose
   )
   .then(() => {
     console.log('Database connection - SUCCESS');
-
-    console.log(
-      '🚀 ~ file: connect.js ~ line 23 ~ .then ~ process.env.NODE_ENV',
-      process.env.NODE_ENV
-    );
     if (process.env.NODE_ENV === 'development') {
       URLsModel.remove({}, function () {
         console.log('Database cleanup - SUCCESS');
