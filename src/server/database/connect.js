@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import initialDBData from '../../../helpers/initialDBData.json';
+import initialDBData from '../../../config/initialDBData.json';
 import { URLsModel } from './Models/URLsModel';
 
 const {

@@ -5,8 +5,9 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { APIRouter } from './router/APIRouter';
 import { appRouter } from './router/appRouter';
+import { paths } from '../../config/paths';
 
-require('dotenv').config();
+require('dotenv').config({ path: `${paths.root}/.env` });
 require('./database/connect');
 
 const app = express();
@@ -21,6 +22,11 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 app.use('/api', APIRouter);
+
+console.log(
+  '🚀 ~ file: server.js ~ line 26 ~ process.env.BASE_URL',
+  process.env.REACT_APP_BASE_URL
+);
 
 app.use('/', appRouter);
 

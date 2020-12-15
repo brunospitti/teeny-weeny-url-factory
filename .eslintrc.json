@@ -18,6 +18,7 @@
     "plugin:react/recommended"
   ],
   "plugins": [
-    "react"
+    "react",
+    "cypress"
   ]
 }

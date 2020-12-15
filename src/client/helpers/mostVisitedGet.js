@@ -8,6 +8,7 @@ export const mostVisitedGet = async () => {
 
     return mostVisited;
   } catch (err) {
+    console.log('🚀 ~ file: mostVisitedGet.js ~ line 11 ~ mostVisitedGet ~ err', err);
     return [];
   }
 };
