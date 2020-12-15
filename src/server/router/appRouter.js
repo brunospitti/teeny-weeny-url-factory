@@ -3,7 +3,6 @@ import path from 'path';
 import { redirectMiddleware } from '../middleware/redirectMiddleware';
 import { ignoreFavicon } from '../middleware/ignoreFavicon';
 
-console.log('appRouter');
 const appRouter = Router();
 
 appRouter.get('/:shortURLCode', ignoreFavicon, redirectMiddleware);

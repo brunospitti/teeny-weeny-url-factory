@@ -19,22 +19,24 @@ mongoose
   .then(() => {
     console.log('Database connection - SUCCESS');
 
-    if (process.env.NODE_ENV !== 'production') {
+    console.log(
+      '🚀 ~ file: connect.js ~ line 23 ~ .then ~ process.env.NODE_ENV',
+      process.env.NODE_ENV
+    );
+    if (process.env.NODE_ENV === 'development') {
       URLsModel.remove({}, function () {
         console.log('Database cleanup - SUCCESS');
 
         URLsModel.insertMany(initialDBData, function (err) {
           if (err) return console.error(err);
-          URLsModel.find(function (err, urls) {
-            if (err) return console.error(err);
-            // console.log('urls', urls);
+          URLsModel.find(function (error) {
+            if (error) return console.error(error);
           });
         });
       });
     }
   })
   .catch((error) => {
-    console.log('Database connection - FAILURE');
-    console.error(error);
+    console.error('Database connection - FAILURE', error);
     process.exit(1);
   });

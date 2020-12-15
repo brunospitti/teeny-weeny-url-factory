@@ -9,10 +9,6 @@ export const MostVisited = () => {
 
   const { theme } = useTheme();
   const [mostVisited, setMostVisited] = useState([]);
-  console.log(
-    '🚀 ~ file: MostVisited.jsx ~ line 12 ~ MostVisited ~ mostVisited',
-    mostVisited
-  );
 
   useEffect(async () => {
     setMostVisited(await mostVisitedGet());
