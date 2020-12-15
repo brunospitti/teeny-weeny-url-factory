@@ -8,14 +8,16 @@ export const makeMeShortPost = async ({ URL, code }) => {
   };
 
   try {
-    const data = await fetch(`${BASE_URL}/api/make-me-short`, requestOptions);
-    const dataJSON = await data.json();
+    const URLObject = await fetch(
+      `${BASE_URL}/api/make-me-short`,
+      requestOptions
+    ).then((data) => data.json());
 
-    if (dataJSON.error) {
-      throw new Error(dataJSON.error);
+    if (URLObject.error) {
+      throw new Error(URLObject.error);
     }
 
-    return dataJSON;
+    return URLObject;
   } catch (err) {
     return { error: err };
   }
