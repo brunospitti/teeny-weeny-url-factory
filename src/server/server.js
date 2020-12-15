@@ -19,26 +19,10 @@ app.use(helmet.hidePoweredBy());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../../dist')));
+app.use(express.static(paths.dist));
 
 app.use('/api', APIRouter);
-
-console.log(
-  '🚀 ~ file: server.js ~ line 26 ~ process.env.BASE_URL',
-  process.env.REACT_APP_BASE_URL
-);
-
 app.use('/', appRouter);
-
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-
-  // Handle React routing, return all requests to React app
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
-}
 
 app.listen(app.get('port'), () =>
   console.log(`Listening to ${app.get('host')} on port ${app.get('port')}`)
