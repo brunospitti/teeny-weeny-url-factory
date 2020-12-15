@@ -1,5 +1,5 @@
 export const makeMeShortPost = async ({ URL, code }) => {
-  const { BASE_URL } = process.env;
+  const BASE_URL = window.location.origin;
 
   const requestOptions = {
     method: 'POST',

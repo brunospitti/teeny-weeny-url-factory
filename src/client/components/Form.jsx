@@ -8,7 +8,7 @@ import { makeMeShortPost } from '../helpers/makeMeShortPost';
 import { useTheme } from './hooks/Theme/useTheme';
 
 export const Form = () => {
-  const { BASE_URL } = process.env;
+  const BASE_URL = window.location.origin;
 
   const [displayError, setDisplayError] = useState();
   const [isCopied, setIsCopied] = useState(false);

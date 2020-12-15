@@ -1,5 +1,5 @@
 export const mostVisitedGet = async () => {
-  const { BASE_URL } = process.env;
+  const BASE_URL = window.location.origin;
 
   try {
     const mostVisited = await fetch(`${BASE_URL}/api/most-visited`).then((data) =>

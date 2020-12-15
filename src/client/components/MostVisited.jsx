@@ -5,7 +5,7 @@ import { mostVisitedGet } from '../helpers/mostVisitedGet';
 import { useTheme } from './hooks/Theme/useTheme';
 
 export const MostVisited = () => {
-  const { BASE_URL } = process.env;
+  const BASE_URL = window.location.origin;
 
   const { theme } = useTheme();
   const [mostVisited, setMostVisited] = useState([]);
