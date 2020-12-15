@@ -11,16 +11,16 @@
     "start-client": "parcel watch src/client/index.html",
     "start-server": "cd src/server && yarn && yarn server",
     "build-server": "cd src/server && yarn",
-    "build-client": "parcel build src/client/index.html",
+    "build-client": "yarn && parcel build src/client/index.html",
     "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.12.7",
     "@testing-library/react": "^11.2.2",
     "babel-jest": "^26.6.3",
@@ -30,6 +30,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^26.6.3",
+    "jest-config": "^26.6.3",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.2.1"
   },
