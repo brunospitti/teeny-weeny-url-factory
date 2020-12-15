@@ -19,7 +19,7 @@ describe('makeMeShortPost', () => {
     const URL = await makeMeShortPost({ URL: 'http://example.com' });
 
     expect(fetchSpy).toHaveBeenCalledTimes(1);
-    expect(fetchSpy).toHaveBeenCalledWith('http://base-url.com/api/make-me-short', {
+    expect(fetchSpy).toHaveBeenCalledWith('http://localhost/api/make-me-short', {
       body: '{"URL":"http://example.com"}',
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',

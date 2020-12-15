@@ -7,7 +7,7 @@ import { APIRouter } from './router/APIRouter';
 import { appRouter } from './router/appRouter';
 import { paths } from '../../config/paths';
 
-require('dotenv').config({ path: `${paths.root}/.env` });
+require('dotenv').config();
 require('./database/connect');
 
 const app = express();
