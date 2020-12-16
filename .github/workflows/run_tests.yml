@@ -20,10 +20,10 @@ jobs:
         env:
           BASE_URL: http://localhost:5555
           NODE_ENV: development
-          DATABASE_USERNAME: ${{ e2e-tests.DATABASE_USERNAME }}
-          DATABASE_PASSWORD: ${{ e2e-tests.DATABASE_PASSWORD }}
-          DATABASE_URL: ${{ e2e-tests.DATABASE_URL }}
-          DATABASE_COLLECTION: ${{ e2e-tests.DATABASE_COLLECTION }}
+          DATABASE_USERNAME: ${{ twuf.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ twuf.DATABASE_PASSWORD }}
+          DATABASE_URL: ${{ twuf.DATABASE_URL }}
+          DATABASE_COLLECTION: ${{ twuf.DATABASE_COLLECTION }}
         with:
           build: yarn build
           config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
