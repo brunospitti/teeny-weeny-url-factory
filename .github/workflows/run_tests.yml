@@ -1,0 +1,33 @@
+name: Tests
+on: [push]
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run tests
+      run: yarn test:unit
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        env:
+          BASE_URL: http://localhost:5555
+          NODE_ENV: development
+          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_COLLECTION: ${{ secrets.DATABASE_COLLECTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+        with:
+          build: yarn build
+          config-file: config/cypress.json
+          start: yarn start
+          wait-on: http://localhost:5555
