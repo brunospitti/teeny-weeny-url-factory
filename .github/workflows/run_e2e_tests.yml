@@ -13,3 +13,11 @@ jobs:
           build: yarn build
           start: yarn start
           wait-on: http://localhost:5555
+          config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
+        env:
+          BASE_URL: http://localhost:5555
+          NODE_ENV: development
+          DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+          DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
+          DATABASE_COLLECTION: ${{secrets.DATABASE_COLLECTION}}
