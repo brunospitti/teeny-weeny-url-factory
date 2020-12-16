@@ -25,6 +25,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DATABASE_COLLECTION: ${{ secrets.DATABASE_COLLECTION }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
           build: yarn build
           config-file: config/cypress.json
