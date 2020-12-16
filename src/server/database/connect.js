@@ -7,11 +7,6 @@ const {
   DATABASE_URL,
   DATABASE_COLLECTION,
 } = process.env;
-console.log('🚀 ~ file: connect.js ~ line 10 ~ BASE_URL', BASE_URL);
-console.log('🚀 ~ file: connect.js ~ line 10 ~ DATABASE_COLLECTION', DATABASE_COLLECTION);
-console.log('🚀 ~ file: connect.js ~ line 10 ~ DATABASE_URL', DATABASE_URL);
-console.log('🚀 ~ file: connect.js ~ line 10 ~ DATABASE_PASSWORD', DATABASE_PASSWORD);
-console.log('🚀 ~ file: connect.js ~ line 10 ~ DATABASE_USERNAME', DATABASE_USERNAME);
 
 mongoose
   .connect(
