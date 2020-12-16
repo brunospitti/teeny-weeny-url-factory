@@ -24,9 +24,6 @@ jobs:
           DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DATABASE_COLLECTION: ${{ secrets.DATABASE_COLLECTION }}
-        run: 
-          echo "CI_WORKFLOW=$CI_WORKFLOW"
-          echo "DATABASE_USERNAME=$DATABASE_USERNAME"
         with:
           build: yarn build
           config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
