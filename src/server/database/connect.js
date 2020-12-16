@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
-import initialDBData from '../../../config/initialDBData.json';
-import { URLsModel } from './Models/URLsModel';
-
+import fetch from 'node-fetch';
 const {
+  BASE_URL,
   DATABASE_USERNAME,
   DATABASE_PASSWORD,
   DATABASE_URL,
@@ -19,16 +18,7 @@ mongoose
   .then(() => {
     console.log('Database connection - SUCCESS');
     if (process.env.NODE_ENV === 'development') {
-      URLsModel.remove({}, function () {
-        console.log('Database cleanup - SUCCESS');
-
-        URLsModel.insertMany(initialDBData, function (err) {
-          if (err) return console.error(err);
-          URLsModel.find(function (error) {
-            if (error) return console.error(error);
-          });
-        });
-      });
+      fetch(`${BASE_URL}/api/clean-up-and-seed`);
     }
   })
   .catch((error) => {

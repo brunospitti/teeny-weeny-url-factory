@@ -88,6 +88,9 @@ export const Form = () => {
             <div className="text">
               I&apos;ve successfully created your Teeny-Weeny URL
             </div>
+            <div className="text your-url">
+              Your URL is: {`${BASE_URL}/${generatedCode}`}
+            </div>
             <div className="expires">
               <span>Note:</span>
               Your Teeny-Weeny URL will be removed if not used in 3 days

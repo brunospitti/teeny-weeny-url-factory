@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:5555",
+  "integrationFolder": "e2e/__tests__",
+  "pluginsFile": "e2e/plugins/index.js",
+  "videosFolder": "e2e/videos",
+  "screenshotsFolder": "e2e/screenshots",
+  "supportFile": false
+}
