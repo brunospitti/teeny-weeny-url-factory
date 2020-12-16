@@ -26,6 +26,6 @@ jobs:
           DATABASE_COLLECTION: ${{ secrets.DATABASE_COLLECTION }}
         with:
           build: yarn build
-          config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
+          config-file: config/cypress.json
           start: yarn start
           wait-on: http://localhost:5555
