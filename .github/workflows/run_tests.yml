@@ -18,14 +18,14 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         env:
-          BASE_URL: http://localhost:5551
+          BASE_URL: http://localhost:5555
           NODE_ENV: development
-          DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DATABASE_COLLECTION: ${{ secrets.DATABASE_COLLECTION }}
+          DATABASE_USERNAME: ${{ e2e-tests.DATABASE_USERNAME }}
+          DATABASE_PASSWORD: ${{ e2e-tests.DATABASE_PASSWORD }}
+          DATABASE_URL: ${{ e2e-tests.DATABASE_URL }}
+          DATABASE_COLLECTION: ${{ e2e-tests.DATABASE_COLLECTION }}
         with:
           build: yarn build
+          config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
           start: yarn start
           wait-on: http://localhost:5555
-          config: baseUrl=http://localhost:5555,integrationFolder=e2e/__tests__,pluginsFile=e2e/plugins/index.js,videosFolder=e2e/videos,screenshotsFolder=e2e/screenshots,supportFile=false
