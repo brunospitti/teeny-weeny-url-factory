@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { URLsModel } from '../database/Models/URLsModel';
+import { lengthModel } from '../database/Models/lengthModel';
 
 export const URLShortenerMiddleware = async (req, res, next) => {
   const { body } = req;
@@ -29,8 +30,14 @@ export const URLShortenerMiddleware = async (req, res, next) => {
       shortURLCode: shortURLCode || nanoid(10),
     });
 
-    newURL.save(function (error) {
+    newURL.save(async function (error) {
       if (error) next(error);
+      let currLength = await lengthModel.findOne({});
+
+      await lengthModel.findOneAndUpdate(
+        {},
+        { totalURLsCreated: currLength ? currLength.totalURLsCreated + 1 : 1 }
+      );
       res.end(JSON.stringify(newURL));
     });
   });

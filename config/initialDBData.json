@@ -2,31 +2,40 @@
   {
     "originalURL": "https://google.com",
     "shortURLCode": "google",
-    "visitDates": [1607610287601]
-  },
-  {
-    "originalURL": "https://brunospitti.com",
-    "shortURLCode": "bs",
-    "visitDates": [1607610287601, 1607610287602, 1607610287601]
-  },
-  {
-    "originalURL": "https://another-website.com",
-    "shortURLCode": "custom",
     "visitDates": [
       1607610287601,
       1607610287601,
       1607610287601,
       1607610287601,
+      1607610287601,
       1607610287601
-    ]
+    ],
+    "fixed": true
+  },
+  {
+    "originalURL": "https://brunospitti.com",
+    "shortURLCode": "bs",
+    "visitDates": [
+      1607610287601,
+      1607610287602,
+      1607610287601,
+      1607610287601,
+      1607610287602,
+      1607610287601,
+      1607610287601,
+      1607610287602,
+      1607610287601
+    ],
+    "fixed": true
   },
   {
     "originalURL": "https://another-website.com",
-    "shortURLCode": "customa",
-    "visitDates": []
+    "shortURLCode": "custom",
+    "visitDates": [1607610287602],
+    "fixed": true
   },
   {
-    "originalURL": "https://another-website.com",
+    "originalURL": "https://twitter.com",
     "shortURLCode": "customb",
     "visitDates": [
       1607610287601,
@@ -34,11 +43,18 @@
       1607610287601,
       1607610287601,
       1607610287601
-    ]
+    ],
+    "fixed": true
   },
   {
-    "originalURL": "https://another-website.com",
-    "shortURLCode": "customc",
+    "originalURL": "https://bit.ly",
+    "shortURLCode": "bitly",
+    "visitDates": [1607610287601, 1607610287602, 1607610287601],
+    "fixed": true
+  },
+  {
+    "originalURL": "https://not-fixed.ly",
+    "shortURLCode": "!fixed",
     "visitDates": [1607610287601, 1607610287602, 1607610287601]
   }
 ]
