@@ -1,9 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // ES6
 
 import { ThemeProvider } from '../../contexts/ThemeContext';
 
 export const Theme = ({ children }) => {
-  const [theme, setTheme] = React.useState('dark');
+  const localTheme = localStorage.getItem('theme');
+
+  const [theme, setTheme] = React.useState(localTheme || 'dark');
 
   return (
     <ThemeProvider
@@ -15,4 +18,8 @@ export const Theme = ({ children }) => {
       {children}
     </ThemeProvider>
   );
+};
+
+Theme.propTypes = {
+  children: PropTypes.node,
 };
