@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors, fontFamilyTitle } from '../helpers/globalStyles';
 import { useTheme } from './hooks/Theme/useTheme';
 import { MostVisited } from './MostVisited';
+import { TotalCreations } from './TotalCreations';
 
 export const CoolData = () => {
   const { theme } = useTheme();
@@ -10,6 +11,7 @@ export const CoolData = () => {
   return (
     <StyledCoolData className="CoolData" theme={theme}>
       <div className="title">Here&apos;s some cool data about our factory</div>
+      <TotalCreations />
       <MostVisited />
     </StyledCoolData>
   );
