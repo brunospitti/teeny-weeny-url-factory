@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { colors } from '../helpers/globalStyles';
 import { useTheme } from './hooks/Theme/useTheme';
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const setClasses = (currentTheme) =>
     `button ${currentTheme} ${currentTheme === theme ? 'active' : ''}`;
